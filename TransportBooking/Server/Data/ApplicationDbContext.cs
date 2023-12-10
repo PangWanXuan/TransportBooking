@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using TransportBooking.Server.Models;
+using TransportBooking.Shared.Domain;
 
 namespace TransportBooking.Server.Data
 {
@@ -13,5 +14,7 @@ namespace TransportBooking.Server.Data
             IOptions<OperationalStoreOptions> operationalStoreOptions) : base(options, operationalStoreOptions)
         {
         }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<Customer> Customers { get; set; }
     }
 }
